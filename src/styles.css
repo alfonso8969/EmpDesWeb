@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('./assets/images/entradras_fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+
+
+}
+span {
+  margin-left: 0.5em;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+label {
+font-weight: 500 !important;
+  font: 1.5em Verdana, Arial, Helvetica, sans-serif !important;
+  color: black;
+  display: inline !important;
+}
+
