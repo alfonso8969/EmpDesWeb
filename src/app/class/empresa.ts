@@ -2,7 +2,7 @@ import { Redes } from "./redes";
 
 export class Empresa extends Redes {
 
-   Id?: number;
+   Id!: number;
 
    Nombre: string;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Empresa } from 'src/app/class/empresa';
@@ -8,7 +8,7 @@ import { Empresa } from 'src/app/class/empresa';
   templateUrl: './add-edit-company.component.html',
   styleUrls: ['./add-edit-company.component.css']
 })
-export class AddEditCompanyComponent implements OnInit {
+export class AddEditCompanyComponent implements OnInit, OnDestroy {
 
   addCompanyForm: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -20,18 +20,25 @@ export class AddEditCompanyComponent implements OnInit {
       email: ['', Validators.required],
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
-      localidad: ['', Validators.required],
-      provincia: ['', Validators.required],
+      localidad: [''],
+      provincia: [''],
       cod_postal: ['', Validators.required]
 
     })
   }
+  ngOnDestroy(): void {
+    document.body.className = ""
+  }
 
   ngOnInit(): void {
+    document.body.className = "imnageAddEdit backGroundImage"
   }
 
   addCompany() {
+    let local = this.addCompanyForm.get("localidad")?.value;
+    let prov = this.addCompanyForm.get("provincia")?.value;
     const company: Empresa = {
+      Id: 0,
       Nombre: this.addCompanyForm.get("name")?.value,
       Sector: this.addCompanyForm.get("sector")?.value,
       Distrito: this.addCompanyForm.get("distrito")?.value,
@@ -41,8 +48,8 @@ export class AddEditCompanyComponent implements OnInit {
       Email: this.addCompanyForm.get("email")?.value,
       Telefono: this.addCompanyForm.get("telefono")?.value,
       Direccion: this.addCompanyForm.get("direccion")?.value,
-      Localidad: this.addCompanyForm.get("localidad")?.value,
-      Provincia: this.addCompanyForm.get("provincia")?.value,
+      Localidad: local == "" ? "Móstoles" : local,
+      Provincia: prov == "" ? "Madrid" : prov,
       Cod_postal: this.addCompanyForm.get("cod_postal")?.value
 
     }

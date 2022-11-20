@@ -1,19 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background-image: url('./assets/images/entradras_fondo.jpg');
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url("./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+.backGroundImage {
   background-size: cover;
   background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
+  position: relative;
   z-index: -1;
-
-
+  height: 100%;
 }
-span {
-  margin-left: 0.5em;
+
+.imageList {
+  background-image: url('./assets/images/urjc2.jpeg');
+}
+
+.imnageAddEdit {
+  background-image: url('./assets/images/entradras_fondo.jpg');
 }
 
 .btn.disabled, .btn:disabled, fieldset:disabled .btn {
@@ -21,10 +25,78 @@ span {
   pointer-events: all !important;
 }
 
+.mat-table {
+  overflow-y: auto;
+}
+
 label {
-font-weight: 500 !important;
-  font: 1.5em Verdana, Arial, Helvetica, sans-serif !important;
+  font-weight: 600 !important;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 1.5em !important;
   color: black;
   display: inline !important;
 }
 
+.tblList th {
+  font-weight: 700 !important;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 1.5em;
+  padding: .5em 5em !important;
+}
+
+.tblList td {
+  font-weight: 900 !important;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 11px;
+  color: cadetblue;
+  padding: .5rem .5rem .5rem .5rem !important;
+}
+
+.table>thead {
+  vertical-align: middle !important;
+}
+
+table {
+  width: 100%;
+} 
+
+.tblList {
+  background-color: azure;
+  cursor: pointer;
+}
+
+th.cdk-column-Nombre {
+  width:  25% !important;
+}
+
+th.cdk-column-Distrito {
+  width:  20% !important;
+}
+
+.h3List {
+  color: white;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+}
+
+.h3AddEdit {
+  color: black;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 2.5em
+}
+
+button {
+  border-radius: 10% !important;
+  font-weight: 700 !important;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 20px !important;
+}
+
+span.err {
+  font-weight: 800!important;
+  font-family: Monserrat, Arial, Helvetica, sans-serif !important;
+  font-size: 17px !important;
+  margin-left: 0.5em;
+}
+
+html, body { height: 100%; }
+body { margin: 0;  }
